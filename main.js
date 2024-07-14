@@ -17,7 +17,11 @@ toggleBtn.addEventListener("click", () => {
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
     if (this.innerHTML == "=") {
-      value.innerHTML = eval(value.innerHTML);
+      if (eval(value.innerHTML) == undefined) {
+        value.innerHTML = "";
+      } else {
+        value.innerHTML = eval(value.innerHTML);
+      }
     } else {
       if (this.innerHTML == "C") {
         value.innerHTML = "";
